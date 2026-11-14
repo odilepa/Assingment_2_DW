@@ -1,0 +1,33 @@
+body {
+    background-color: #ececec;
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.baseDescription {
+    background-color: #138822;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 250px;
+    width: auto;
+    gap: 20px;
+    padding: 20px;
+    --general-font-color: #ececec;
+}
+
+.baseDescription img {
+    height: 90%;
+    width: auto;
+}
+
+div h1{
+    font-size: 30px;
+    color: var(--general-font-color);
+}
+
+div p{
+    font-size: 20px;
+    color: var(--general-font-color);
+}
