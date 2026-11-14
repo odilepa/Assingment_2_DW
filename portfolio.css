@@ -39,24 +39,29 @@ body {
 .curriculumBoard {
     background-color: #7bd187;
     display: flex;
+    align-items: left;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
     margin-top: 20px;
     --general-font-color: #1a1a1a;
 }
 
 .curriculumBoard h1{
-    font-size: 20px;
+    font-size: 50px;
     color: var(--general-font-color);
 }
 
 .curriculumItem {
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 10px;
+    flex-direction: column;
+	text-align: left;
+    justify-content: flex-start;
 }
 
-.curriculumItem #item1 {
+.curriculumBoard input {
     display: none;
 }
 
@@ -64,6 +69,11 @@ body {
     font-size: 40px;
     color: var(--general-font-color);
     cursor: pointer;
+}
+
+.curriculumItem p{
+    font-size: 20px;
+    color: var(--general-font-color);
 }
 
 .notClicked {
@@ -74,8 +84,11 @@ body {
     display: none;
 }
 
-#content1{
+.curriculumContent {
     display: none;
+    flex-direction: column;
+	text-align: left;
+	justify-content: flex-start;
 }
 
 input:checked ~ .notClicked {
@@ -86,6 +99,30 @@ input:checked ~ .clicked {
     display: flex;
 }
 
-input:checked ~ #content1 {
+#item1:checked ~ #content1 {
+    display: flex;
+}
+
+#item2:checked ~ #content2 {
+    display: flex;
+}
+
+#item3:checked ~ #content3 {
+    display: flex;
+}
+
+#item4:checked ~ #content4 {
+    display: flex;
+}
+
+#item5:checked ~ #content5 {
+    display: flex;
+}
+
+#item6:checked ~ #content6 {
+    display: flex;
+}
+
+#item7:checked ~ #content7 {
     display: flex;
 }
