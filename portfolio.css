@@ -145,6 +145,7 @@ input:checked ~ .clicked {
     align-items: left;
     flex-direction: column;
     position: relative;
+    --animation-moment: 2s;
 }
 
 .projectContent {
@@ -164,12 +165,46 @@ input:checked ~ .clicked {
     align-items: center;
     position: absolute;
     z-index: 2;
+    animation: slideDoorBack 2s forwards;
+    animation-delay: var(--animation-moment);
+    animation-fill-mode: forwards;
 }
 
 .projectHandle {
     background-color: #0d4615;
     height: 80%;
-    width: 3%;
+    width: 50px;
     position: relative;
     left: 5%
+}
+
+#project1:hover .projectDoor{
+    animation: slideDoor 2s forwards;
+    animation-fill-mode: forwards;
+    /* animation-delay: (var(--expected-delay)); */
+}
+
+@keyframes slideDoor {
+    0% {
+        left: 0%;
+        --animation-moment: 2s;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+        --animation-moment: 0s;
+    }
+}
+
+@keyframes slideDoorBack {
+    0% {
+        left: 100%;
+        opacity: 0;
+        --animation-moment: 0s;
+    }
+    100% {
+        left: 0%;
+        opacity: 1;
+        --animation-moment: 2s;
+    }
 }
