@@ -137,14 +137,39 @@ input:checked ~ .clicked {
     padding: 20px;
     margin-top: 20px;
     --general-font-color: #ececec;
+    --general-slider-color: #0f691b
 }
 
 .projectItem {
-    background-color: #7bd187;
     display: flex;
     align-items: left;
     flex-direction: column;
+    position: relative;
+}
+
+.projectContent {
+    background-color: #7bd187;
+    width: calc(100% - 50px);
+    height: 100%;
     padding: 20px;
-    margin-top: 20px;
-    border: #0f691b 5px solid;
+    border: var(--general-slider-color) 5px solid;
+    z-index: 1;
+}
+
+.projectDoor {
+    background-color: var(--general-slider-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+}
+
+.projectHandle {
+    background-color: #0d4615;
+    height: 80%;
+    width: 3%;
+    position: relative;
+    left: 5%
 }
