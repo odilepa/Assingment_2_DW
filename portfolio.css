@@ -3,6 +3,12 @@ body {
     margin: 10px;
     padding: 10px;
     font-family: Arial, sans-serif;
+    --general-font-color: #1a1a1a;
+}
+
+h1{
+    font-size: 50px;
+    color: var(--general-font-color);
 }
 
 /* Base Description */
@@ -44,12 +50,6 @@ body {
     gap: 20px;
     padding: 20px;
     margin-top: 20px;
-    --general-font-color: #1a1a1a;
-}
-
-.curriculumBoard h1{
-    font-size: 50px;
-    color: var(--general-font-color);
 }
 
 .curriculumItem {
@@ -125,4 +125,26 @@ input:checked ~ .clicked {
 
 #item7:checked ~ #content7 {
     display: flex;
+}
+
+/* Project Showcase */
+
+.projectsBoard {
+    background-color: #138822;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+    --general-font-color: #ececec;
+}
+
+.projectItem {
+    background-color: #7bd187;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+    border: #0f691b 5px solid;
 }
