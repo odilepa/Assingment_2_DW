@@ -144,6 +144,7 @@ input:checked ~ .clicked {
     display: flex;
     align-items: left;
     flex-direction: column;
+    margin-bottom: 20px;
     position: relative;
     --animation-moment: 2s;
 }
@@ -155,6 +156,10 @@ input:checked ~ .clicked {
     padding: 20px;
     border: var(--general-slider-color) 5px solid;
     z-index: 1;
+}
+
+.projectItem:nth-child(odd) .projectContent {
+    text-align: right;
 }
 
 .projectDoor {
@@ -170,6 +175,12 @@ input:checked ~ .clicked {
     animation-fill-mode: forwards;
 }
 
+.projectItem:nth-child(odd) .projectDoor {
+    animation: slideDoorBackInverse 2s forwards;
+    animation-delay: var(--animation-moment);
+    animation-fill-mode: forwards;
+}
+
 .projectHandle {
     background-color: #0d4615;
     height: 80%;
@@ -178,10 +189,16 @@ input:checked ~ .clicked {
     left: 5%
 }
 
-#project1:hover .projectDoor{
+.projectItem:nth-child(odd) .projectHandle {
+    left: calc(95% - 50px);
+}
+
+.projectItem:hover .projectDoor{
     animation: slideDoor 2s forwards;
-    animation-fill-mode: forwards;
-    /* animation-delay: (var(--expected-delay)); */
+}
+
+.projectItem:nth-child(odd):hover .projectDoor {
+    animation: slideDoorInverse 2s forwards;
 }
 
 @keyframes slideDoor {
@@ -204,6 +221,31 @@ input:checked ~ .clicked {
     }
     100% {
         left: 0%;
+        opacity: 1;
+        --animation-moment: 2s;
+    }
+}
+
+@keyframes slideDoorInverse {
+    0% {
+        right: 0%;
+        --animation-moment: 2s;
+    }
+    100% {
+        right: 100%;
+        opacity: 0;
+        --animation-moment: 0s;
+    }
+}
+
+@keyframes slideDoorBackInverse {
+    0% {
+        right: 100%;
+        opacity: 0;
+        --animation-moment: 0s;
+    }
+    100% {
+        right: 0%;
         opacity: 1;
         --animation-moment: 2s;
     }
