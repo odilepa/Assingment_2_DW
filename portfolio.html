@@ -7,7 +7,20 @@
 	<link rel="stylesheet" href="portfolio.css">
 </head>
 	<body>
-		<div class="baseDescription">
+		<div class="aidScroller">
+			<div class="aidScrollerTopBar">
+				<input type="checkbox" id="aidScrollerCheckbox">
+				<label for="aidScrollerCheckbox" class="notClicked">○ Scroller</label>
+				<label for="aidScrollerCheckbox" class="clicked">● Scroller</label>
+			</div>
+			<div class="aidScrollerContent">
+				<a href="#baseDescriptionContent">Descrição básica</a>
+				<a href="#curriculumBoardContent">Itens Currículares</a>
+				<a href="#projectsBoardContent">Projetos</a>
+			</div>
+		</div>
+
+		<div class="baseDescription" id="baseDescriptionContent">
 			<img src="images/myFace.webp">
 			<div>
 				<h1>Hello, my name is Alexandre Fonseca</h1>
@@ -15,7 +28,7 @@
 			</div>
 		</div>
 
-		<div class="curriculumBoard">
+		<div class="curriculumBoard" id="curriculumBoardContent">
 			<h1>Curriculum items</h1>
 			<div class="curriculumItem">
 				<input type="checkbox" id="item1">
@@ -88,7 +101,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="projectsBoard">
+
+		<div class="projectsBoard" id="projectsBoardContent">
 			<h1>Projects</h1>
 			<div class="projectItem" id="project1">
 				<div class="projectDoor">
@@ -118,5 +132,6 @@
 				</div>
 			</div>
 		</div>
+
 	</body>
 </html>
