@@ -20,8 +20,8 @@ h1{
     align-items: center;
     justify-content: left;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 0px;
+    right: 0px;
     height: auto;
     width: 200px;
     z-index: 1000;
@@ -37,6 +37,11 @@ h1{
 }
 .aidScrollerTopBar input {
     display: none;
+}
+
+.aidScrollerTopBar label {
+    color: var(--general-font-color);
+    cursor: pointer;
 }
 
 .notClicked {
@@ -105,7 +110,7 @@ input:checked ~ .clicked {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    /* margin-top: 20px; */
+    margin-top: 20px;
 }
 
 .curriculumItem {
@@ -129,41 +134,18 @@ input:checked ~ .clicked {
 
 .curriculumItem p{
     font-size: 20px;
-    color: var(--general-font-color);
+    color: #ececec;;
 }
 
 .curriculumContent {
+    background-color: #138822;
     display: none;
     flex-direction: column;
 	text-align: left;
 	justify-content: flex-start;
 }
 
-#item1:checked ~ #content1 {
-    display: flex;
-}
-
-#item2:checked ~ #content2 {
-    display: flex;
-}
-
-#item3:checked ~ #content3 {
-    display: flex;
-}
-
-#item4:checked ~ #content4 {
-    display: flex;
-}
-
-#item5:checked ~ #content5 {
-    display: flex;
-}
-
-#item6:checked ~ #content6 {
-    display: flex;
-}
-
-#item7:checked ~ #content7 {
+.curriculumCheckbox:checked ~ .curriculumContent {
     display: flex;
 }
 
