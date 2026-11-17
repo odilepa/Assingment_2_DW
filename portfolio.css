@@ -192,13 +192,15 @@ input:checked ~ .clicked {
     align-items: center;
     position: absolute;
     z-index: 2;
-    animation: slideDoorBack 2s forwards;
+    /* animation: slideDoorBack 2s forwards; */
+    animation: none;
     animation-delay: var(--animation-moment);
     animation-fill-mode: forwards;
 }
 
 .projectItem:nth-child(odd) .projectDoor {
-    animation: slideDoorBackInverse 2s forwards;
+    /* animation: slideDoorBackInverse 2s forwards; */
+    animation: none;
     animation-delay: var(--animation-moment);
     animation-fill-mode: forwards;
 }
