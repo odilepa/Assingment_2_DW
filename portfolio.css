@@ -137,10 +137,21 @@ h1{
     grid-template-columns: 1fr 1fr;
 }
 
-.curriculumBoard .curriculumItem {
+.curriculumBoard .listCurriculum .curriculumItem {
     display: flex;
     align-items: left;
     gap: 10px;
+    margin-top: 20px;
+    flex-direction: column;
+	text-align: left;
+    justify-content: flex-start;
+}
+
+.curriculumBoard .listCurriculum:nth-child(1) {
+    display: flex;
+    align-items: left;
+    gap: 10px;
+    margin-top: 0;
     flex-direction: column;
 	text-align: left;
     justify-content: flex-start;
@@ -166,6 +177,7 @@ h1{
 .curriculumItem p{
     font-size: 20px;
     color: var(--general-font-color);
+    margin: 20px;
 }
 
 .curriculumBoard .curriculumItem .curriculumContent {
@@ -175,6 +187,10 @@ h1{
 	text-align: left;
 	justify-content: flex-start;
     border: var(--general-protection-color) 5px solid;
+}
+
+.curriculumBoard .curriculumItem #content1 {
+    margin-top: 0px;
 }
 
 .curriculumCheckbox:checked ~ .curriculumContent {
