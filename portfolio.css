@@ -36,10 +36,17 @@ h1{
     background-color: #98F0A4;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     height: 30px;
     width: 100%;
 }
+
+.aidScrollerTopBar:hover {
+    background-color: #70EB81;
+    border: var(--general-itembox-color) 5px solid;
+    cursor: pointer;
+}
+
 .aidScrollerTopBar input {
     display: none;
 }
@@ -50,18 +57,6 @@ h1{
 }
 
 .notClicked {
-    display: flex;
-}
-
-.clicked {
-    display: none;
-}
-
-input:checked ~ .notClicked {
-    display: none;
-}
-
-input:checked ~ .clicked {
     display: flex;
 }
 
