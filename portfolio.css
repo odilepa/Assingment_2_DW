@@ -72,6 +72,12 @@ h1{
     display: flex;
 }
 
+.aidScrollerContent a {
+    color: var(--general-font-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+
 /* Base Description */
 
 .baseDescription {
@@ -113,7 +119,7 @@ h1{
     margin-top: 20px;
 }
 
-.curriculumBoard div{
+.listCurriculum{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -244,17 +250,6 @@ h1{
     }
 }
 
-@keyframes slideDoorBack {
-    0% {
-        left: 100%;
-        opacity: 0;
-    }
-    100% {
-        left: 0%;
-        opacity: 1;
-    }
-}
-
 @keyframes slideDoorInverse {
     0% {
         right: 0%;
@@ -265,13 +260,19 @@ h1{
     }
 }
 
-@keyframes slideDoorBackInverse {
-    0% {
-        right: 100%;
-        opacity: 0;
+/* Change of Screen size */
+@media screen and (max-width: 1000px) {
+    .baseDescription{
+        height: 300px;
     }
-    100% {
-        right: 0%;
-        opacity: 1;
+
+    .listCurriculum {
+        display:flex;
+        flex-direction: column;
+    }
+
+    .listProjects {
+        display:flex;
+        flex-direction: column;
     }
 }
