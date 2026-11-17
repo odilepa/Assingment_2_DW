@@ -179,6 +179,12 @@ input:checked ~ .clicked {
     --general-animation-moment: 1s;
 }
 
+.listProjects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
 .projectItem {
     display: flex;
     align-items: left;
