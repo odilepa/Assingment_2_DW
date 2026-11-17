@@ -1,20 +1,25 @@
 body {
-    background-color: #ececec;
+    background-color: #C1F6C8;
     margin: 10px;
     padding: 10px;
     font-family: Arial, sans-serif;
-    --general-font-color: #1a1a1a;
+    --general-div-color: #1AB22D;
+    --general-itembox-color: #48E55D;
+    --general-protection-color: #148F25;
+    --general-handle-color: #0F671A;
+    --general-font-color: #031606;
+    --clearer-font-color: #E9FCEB;
 }
 
 h1{
-    font-size: 50px;
+    font-size: 30px;
     color: var(--general-font-color);
 }
 
 /* Aid Scroller */
 
 .aidScroller {
-    background-color: #14ab28;
+    background-color: #70EB81;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +33,7 @@ h1{
 }
 
 .aidScrollerTopBar {
-    background-color: #1ad587;
+    background-color: #98F0A4;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -75,7 +80,7 @@ input:checked ~ .clicked {
 /* Base Description */
 
 .baseDescription {
-    background-color: #138822;
+    background-color: var(--general-div-color);
     display: flex;
     align-items: center;
     justify-content: left;
@@ -83,7 +88,7 @@ input:checked ~ .clicked {
     width: auto;
     gap: 20px;
     padding: 20px;
-    --general-font-color: #ececec;
+    /* --general-font-color: #ececec; */
 }
 
 .baseDescription img {
@@ -104,7 +109,7 @@ input:checked ~ .clicked {
 /* Curriculum items */
 
 .curriculumBoard {
-    background-color: #7bd187;
+    background-color: var(--general-div-color);
     display: flex;
     align-items: left;
     flex-direction: column;
@@ -113,7 +118,12 @@ input:checked ~ .clicked {
     margin-top: 20px;
 }
 
-.curriculumItem {
+.curriculumBoard div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.curriculumBoard .curriculumItem {
     display: flex;
     align-items: left;
     gap: 10px;
@@ -127,22 +137,30 @@ input:checked ~ .clicked {
 }
 
 .curriculumItem label {
-    font-size: 40px;
-    color: var(--general-font-color);
+    font-size: 30px;
+    color: var(--clearer-font-color);
+    background-color: #0F671A;
     cursor: pointer;
+    border: var(--general-protection-color) 5px solid;
+}
+
+.curriculumItem label:hover {
+    color: var(--clearer-font-color);
+    background-color: #093E10;
 }
 
 .curriculumItem p{
     font-size: 20px;
-    color: #ececec;;
+    color: var(--general-font-color);
 }
 
-.curriculumContent {
-    background-color: #138822;
+.curriculumBoard .curriculumItem .curriculumContent {
+    background-color: var(--general-itembox-color);
     display: none;
     flex-direction: column;
 	text-align: left;
 	justify-content: flex-start;
+    border: var(--general-protection-color) 5px solid;
 }
 
 .curriculumCheckbox:checked ~ .curriculumContent {
@@ -152,14 +170,13 @@ input:checked ~ .clicked {
 /* Project Showcase */
 
 .projectsBoard {
-    background-color: #138822;
+    background-color: var(--general-div-color);
     display: flex;
     align-items: left;
     flex-direction: column;
     padding: 20px;
     margin-top: 20px;
-    --general-font-color: #ececec;
-    --general-slider-color: #0f691b
+    --general-animation-moment: 1s;
 }
 
 .projectItem {
@@ -172,11 +189,11 @@ input:checked ~ .clicked {
 }
 
 .projectContent {
-    background-color: #7bd187;
+    background-color: var(--general-itembox-color);
     width: calc(100% - 50px);
     height: 100%;
     padding: 20px;
-    border: var(--general-slider-color) 5px solid;
+    border: var(--general-protection-color) 5px solid;
     z-index: 1;
 }
 
@@ -185,28 +202,19 @@ input:checked ~ .clicked {
 }
 
 .projectDoor {
-    background-color: var(--general-slider-color);
+    background-color: var(--general-protection-color);
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     position: absolute;
     z-index: 2;
-    /* animation: slideDoorBack 2s forwards; */
     animation: none;
-    animation-delay: var(--animation-moment);
-    animation-fill-mode: forwards;
-}
-
-.projectItem:nth-child(odd) .projectDoor {
-    /* animation: slideDoorBackInverse 2s forwards; */
-    animation: none;
-    animation-delay: var(--animation-moment);
     animation-fill-mode: forwards;
 }
 
 .projectHandle {
-    background-color: #0d4615;
+    background-color: var(--general-handle-color);
     height: 80%;
     width: 50px;
     position: relative;
@@ -218,22 +226,20 @@ input:checked ~ .clicked {
 }
 
 .projectItem:hover .projectDoor{
-    animation: slideDoor 2s forwards;
+    animation: slideDoor var(--general-animation-moment) forwards;
 }
 
 .projectItem:nth-child(odd):hover .projectDoor {
-    animation: slideDoorInverse 2s forwards;
+    animation: slideDoorInverse var(--general-animation-moment) forwards;
 }
 
 @keyframes slideDoor {
     0% {
         left: 0%;
-        --animation-moment: 2s;
     }
     100% {
         left: 100%;
         opacity: 0;
-        --animation-moment: 0s;
     }
 }
 
@@ -241,24 +247,20 @@ input:checked ~ .clicked {
     0% {
         left: 100%;
         opacity: 0;
-        --animation-moment: 0s;
     }
     100% {
         left: 0%;
         opacity: 1;
-        --animation-moment: 2s;
     }
 }
 
 @keyframes slideDoorInverse {
     0% {
         right: 0%;
-        --animation-moment: 2s;
     }
     100% {
         right: 100%;
         opacity: 0;
-        --animation-moment: 0s;
     }
 }
 
@@ -266,11 +268,9 @@ input:checked ~ .clicked {
     0% {
         right: 100%;
         opacity: 0;
-        --animation-moment: 0s;
     }
     100% {
         right: 0%;
         opacity: 1;
-        --animation-moment: 2s;
     }
 }
